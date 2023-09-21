@@ -11,10 +11,6 @@ body {
     color: #333;
     margin-top: 20px;
   }
-  h2 {
-    font-family: Arial,sans-serif;
-  }
-  
   /* Style untuk tabel Time Tables */
   table {
     border-collapse: collapse;
