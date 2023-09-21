@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Operasi Aritmatika</title>
+</head>
+<body>
+    <h1>Aplikasi Operasi Aritmatika</h1>
+
+    <!-- Formulir input untuk deret Fibonacci -->
+    <div>
+        <h2>Perhitungan Deret Fibonacci</h2>
+        <label for="fibonacciInput">Jumlah Angka:</label>
+        <input type="number" id="fibonacciInput">
+        <button onclick="calculateFibonacci()">Hitung</button>
+        <div id="fibonacciResult"></div>
+    </div>
+
+    <!-- Formulir input untuk perhitungan volume bangun ruang -->
+    <div>
+        <h2>Perhitungan Volume Bangun Ruang</h2>
+        <label for="shape">Jenis Bangun Ruang:</label>
+        <select id="shape">
+            <option value="kubus">Kubus</option>
+            <option value="balok">Balok</option>
+        </select>
+        <label for="length">Panjang:</label>
+        <input type="number" id="length">
+        <label for="width">Lebar:</label>
+        <input type="number" id="width">
+        <label for="height">Tinggi:</label>
+        <input type="number" id="height">
+        <button onclick="calculateVolume()">Hitung</button>
+        <div id="volumeResult"></div>
+    </div>
+
+    <!-- Hasil perhitungan akan ditampilkan di div berikut -->
+    <div id="result"></div>
+
+    <script src="script.js"></script> <!-- Anda dapat membuat file JavaScript terpisah jika diperlukan -->
+</body>
+</html>
