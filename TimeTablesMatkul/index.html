@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Time Tables</title>
+</head>
+<body>
+    <h1>Course Schedule IKI Class 2023-2024</h1>
+    <h2>COLLEGE TIMETABLE</h2>
+
+    <!-- Input untuk pencarian -->
+    <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Cari Mata Kuliah...">
+
+    <!-- Tabel Time Tables -->
+    <table>
+        <tr>
+            <th>Mata Kuliah</th>
+            <th>Hari</th>
+            <th>Jam</th>
+            <th>Dosen</th>
+        </tr>
+        <tr>
+          <td>Jaringan Komputer</td>
+          <td>Senin</td>
+          <td>10:30 - 13:30</td>
+          <td>Pak Yota</td>
+        </tr>
+        <tr>
+            <td>Komputer Masyarakat</td>
+            <td>Senin</td>
+            <td>13:30 - 16:00</td>
+            <td>Buk Kertiasih</td>
+        </tr>
+        <tr>
+            <td>Metode Numerik</td>
+            <td>Selasa</td>
+            <td>10:30 - 13:00</td>
+            <td>Pak Hendra</td>
+        </tr>
+        <tr>
+          <td> Pemrograman Berorientasi Objek</td>
+          <td>Rabu</td>
+          <td>07.30 - 10.00</td>
+          <td>Pak Yudhi</td>
+        </tr>
+        <tr>
+          <td>Aljabar Linier</td>
+          <td>Rabu</td>
+          <td>10:30 - 13:00</td>
+          <td>Bu Dewi Sintiari</td>
+        </tr>
+        <tr>
+          <td>Praktikum Jaringan Komputer</td>
+          <td>Rabu</td>
+          <td>13.30 - 16.00</td>
+          <td>Pak Purna</td>
+        </tr>
+        <tr>
+          <td>Matematika Diskrit</td>
+          <td>Kamis</td>
+          <td>13.30 - 16.00</td>
+          <td> Bu Joni</td>
+        </tr>
+        <tr>
+          <td>Statistik</td>
+          <td>Jumat</td>
+          <td>07.30 - 10.00</td>
+          <td>Pak Setemen</td>
+        </tr>
+        <tr>
+          <td>Teknologi Web</td>
+          <td>Jumat</td>
+          <td>10.30 - 13.00</td>
+          <td>Pak Agus </td>
+        </tr>
+            
+    </table>
+
+    <script>
+      // Fungsi untuk melakukan pencarian pada tabel
+      function searchTable() {
+        const input = document.getElementById('searchInput');
+        const filter = input.value.toUpperCase();
+        const table = document.querySelector('table');
+        const rows = table.getElementsByTagName('tr');
+
+        // Loop melalui setiap baris tabel dan sembunyikan yang tidak cocok dengan kriteria pencarian
+        for (let i = 1; i < rows.length; i++) {
+          const cells = rows[i].getElementsByTagName('td');
+          let found = false;
+
+          for (let j = 0; j < cells.length; j++) {
+            const cell = cells[j];
+            if (cell) {
+              const textValue = cell.textContent || cell.innerText;
+              if (textValue.toUpperCase().indexOf(filter) > -1) {
+                found = true;
+                break;
+              }
+            }
+          }
+
+          if (found) {
+            rows[i].style.display = '';
+          } else {
+            rows[i].style.display = 'none';
+          }
+        }
+      }
+    </script>
+</body>
+</html>
